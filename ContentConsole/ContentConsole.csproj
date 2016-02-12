@@ -42,8 +42,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants.cs" />
+    <Compile Include="ContentProcessor\ContentProcessor.cs" />
+    <Compile Include="ContentProcessor\ContentProcessorLauncher.cs" />
+    <Compile Include="ContentProcessor\ContentProcessorParams.cs" />
+    <Compile Include="ContentProcessor\ContentProcessorResult.cs" />
+    <Compile Include="ContentProcessor\IContentProcessor.cs" />
+    <Compile Include="ContentProcessor\Command.cs" />
+    <Compile Include="IO\IInputOutput.cs" />
+    <Compile Include="IO\ConsoleInputOutput.cs" />
+    <Compile Include="IO\TextFileReader.cs" />
+    <Compile Include="IO\ITextFileReader.cs" />
+    <Compile Include="Repositories\IWordsRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\WordsRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\Content.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Data\BannedWords.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
