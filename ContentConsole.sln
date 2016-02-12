@@ -14,8 +14,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{D50987
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContentConsole.Test.Acceptance", "ContentConsole.Test.Acceptance\ContentConsole.Test.Acceptance.csproj", "{04B033CB-416B-4C0A-A5A5-135E2CB4CFC5}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,10 +28,6 @@ Global
 		{0F4BB904-F47A-405B-84C1-8D1332B1A781}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F4BB904-F47A-405B-84C1-8D1332B1A781}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F4BB904-F47A-405B-84C1-8D1332B1A781}.Release|Any CPU.Build.0 = Release|Any CPU
-		{04B033CB-416B-4C0A-A5A5-135E2CB4CFC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{04B033CB-416B-4C0A-A5A5-135E2CB4CFC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{04B033CB-416B-4C0A-A5A5-135E2CB4CFC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{04B033CB-416B-4C0A-A5A5-135E2CB4CFC5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
