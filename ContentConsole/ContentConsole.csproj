@@ -45,7 +45,6 @@
     <Compile Include="Constants.cs" />
     <Compile Include="ContentProcessor\ContentProcessor.cs" />
     <Compile Include="ContentProcessor\ContentProcessorLauncher.cs" />
-    <Compile Include="ContentProcessor\ContentProcessorParams.cs" />
     <Compile Include="ContentProcessor\ContentProcessorResult.cs" />
     <Compile Include="ContentProcessor\IContentProcessor.cs" />
     <Compile Include="ContentProcessor\Command.cs" />

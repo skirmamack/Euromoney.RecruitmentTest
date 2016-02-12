@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System.Collections.Generic;
+using NUnit.Framework;
 using ContentConsole.ContentProcessor;
 using ContentConsole.Test.Unit.Stubs;
 
@@ -96,6 +97,7 @@ The weather in Manchester in winter is bad. It rains all the time - it must be h
 Total Number of negative words: 2
 Press ANY key to exit.
 <READ KEY>
+Enter
 ";
 
             //when
@@ -117,6 +119,7 @@ Press ANY key to exit.
             const string expectedOutput = @"The weather in Manchester in winter is b#d. It rains all the time - it must be h######e for people visiting.
 Press ANY key to exit.
 <READ KEY>
+Enter
 ";
 
             //when
@@ -139,6 +142,7 @@ Press ANY key to exit.
 Total Number of negative words: 2
 Press ANY key to exit.
 <READ KEY>
+Enter
 ";
 
             //when
@@ -147,6 +151,34 @@ Press ANY key to exit.
             //then
             var output = _inputOutput.GetOutput();
             Assert.That(output, Is.EqualTo(expectedOutput));
+        }
+
+        [Test]
+        public void null_content_should_be_treated_as_empty_and_not_fail()
+        {
+            //given
+            var negativeWords = new[] { "BB" };
+            const Command command = Command.FilterNegative;
+
+            //when
+            var result = _commandProcessor.Run(command, null, negativeWords);
+
+            //then
+            Assert.That(result.Content, Is.EqualTo(""));
+        }
+
+        [Test]
+        public void null_negative_words_array_should_be_treated_as_empty()
+        {
+            //given
+            const Command command = Command.DisplayNegativeCount;
+
+            //when
+            var result = _commandProcessor.Run(command, "some text", null);
+
+            //then
+            Assert.That(result.NegativeWordsCount, Is.EqualTo(0));
+            Assert.That(result.Content, Is.EqualTo("some text"));
         }
     }
 }

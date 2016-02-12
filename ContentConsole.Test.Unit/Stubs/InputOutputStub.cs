@@ -11,6 +11,11 @@ namespace ContentConsole.Test.Unit.Stubs
 
         public Queue<ConsoleKeyInfo> Keys { get; set; }
 
+        private static ConsoleKeyInfo EnterKey
+        {
+            get { return new ConsoleKeyInfo(' ', ConsoleKey.Enter, false, false, false); }
+        }
+
         public InputOutputStub()
         {
             Output = new StringBuilder();
@@ -38,8 +43,7 @@ namespace ContentConsole.Test.Unit.Stubs
         public ConsoleKeyInfo ReadKey()
         {
             Output.AppendLine("<READ KEY>");
-            if (Keys.Count == 0) throw new Exception("No keys found!");
-            var key = Keys.Dequeue();
+            var key = Keys.Count == 0 ? EnterKey : Keys.Dequeue();
             Output.AppendLine(key.Key.ToString());
             return key;
         }

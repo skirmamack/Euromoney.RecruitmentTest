@@ -22,6 +22,9 @@ namespace ContentConsole.ContentProcessor
 
         public ContentProcessorResult Run(Command command, string content, IList<string> negativeWords)
         {
+            content = content ?? "";
+            negativeWords = negativeWords ?? new List<string>();
+
             var matches = GetNegativeWordMatches(content, negativeWords);
 
             var result = new ContentProcessorResult
