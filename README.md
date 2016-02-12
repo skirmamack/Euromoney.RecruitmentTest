@@ -1,3 +1,17 @@
+## Description
+
+- Content text by default is located in "Data\Content.txt" text file
+- Negative words by default are located in "Data\BannedWords.txt" text file
+
+The console program has  menu with three choices, each performing Story 1, Story 3 and Story 4 functionality. Story 2 functionality is performed in all cases, because the negative words list is loaded from the text file.
+
+Sorry, maybe I misunderstood something, but to me Story 1 and Story 4 are almost asking for the same thing. What I did is just changed a bit the output text, but basically functionality is the same.
+
+The code has been written to be testible, also prepared for dependency injection as you would potentially do.
+
+Also would like to notice that except of regular unit tests, UI interaction tests have been written. They test if the console output has been written as expected. Also some tests mimic keyboard clicks and verify if correct commands get called and if UI works as expected.
+
+Of course, more tests could be written, but hope the solution covers main things what you would be looking for.
 
 
 
